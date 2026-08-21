@@ -1,0 +1,16 @@
+= Glossary
+:description: Definitions of terms used in TruWorlds
+
+== TruWorlds terms
+
+=== Parent
+The object that contains another object. For example, if a part is inside a model, the model is the parent of the part. You can change the parent by setting the `Parent` property in TruScript, or by dragging one object over another in the TruWorlds Creator Explorer Tree panel.
+
+=== Signal
+The way TruWorlds tells your scripts that something happened. You can connect to a signal calling the `Connect()` function on the signal object.
+
+=== Stud
+The unit of distance in TruWorlds. Four studs is equal to one meter.
+
+=== World
+A world is what creators make and publish to TruWorlds. Worlds are interactive 3D environments that can be explored by players. Also the name of the Instance object that holds every object that a player can see can interact with.

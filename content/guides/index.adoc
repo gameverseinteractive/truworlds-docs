@@ -1,0 +1,4 @@
+= TruWorlds Guides
+:description: Complete resources for learning to create worlds in TruWorlds.
+
+Welcome to the TruWorlds Creator guides. These pages walk you through building, scripting, and publishing your worlds step by step. Pick a category below to get going.

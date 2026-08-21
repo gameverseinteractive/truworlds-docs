@@ -1,0 +1,40 @@
+name: publish
+on:
+  push:
+    branches: [main]
+concurrency:
+  group: publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      ACCOUNT: ${{ vars.STORAGE_ACCOUNT }}
+      SAS: ${{ secrets.DOCS_PUBLISH_SAS }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/validate.mjs
+      - name: bundle
+        run: |
+          echo "BUNDLE=docs-content-${GITHUB_SHA::8}.zip" >> "$GITHUB_ENV"
+          cd content && zip -qr "../docs-content-${GITHUB_SHA::8}.zip" .
+      - name: upload bundle
+        run: |
+          az storage blob upload --account-name "$ACCOUNT" --container-name docs-content \
+            --name "$BUNDLE" --file "$BUNDLE" --sas-token "$SAS" --overwrite
+      - name: upload manifest (last - readers key off it)
+        run: |
+          printf '{"sha":"%s","bundle":"%s","timestamp":"%s"}' \
+            "$GITHUB_SHA" "$BUNDLE" "$(date -u +%FT%TZ)" > manifest.json
+          az storage blob upload --account-name "$ACCOUNT" --container-name docs-content \
+            --name manifest.json --file manifest.json --sas-token "$SAS" --overwrite
+      - name: prune old bundles (keep newest 10)
+        run: |
+          az storage blob list --account-name "$ACCOUNT" --container-name docs-content --sas-token "$SAS" \
+            --query "[?starts_with(name,'docs-content-')].{n:name,t:properties.creationTime}" -o json \
+            | jq -r 'sort_by(.t) | .[:-10][].n' \
+            | xargs -r -n1 -I{} az storage blob delete --account-name "$ACCOUNT" \
+                --container-name docs-content --sas-token "$SAS" --name "{}"

@@ -1,0 +1,68 @@
+= Variables & Values
+:description: Store and reuse values in your TruScript code.
+
+In this guide, we will cover the basics of working with values and variables in TruScript. By the end of this guide, you should be familiar with both terms (value and variable) as they are fundamental to programming in TruScript. If you are new to programming, don't worry! We will explain these concepts in detail, so keep reading.
+
+== What is a value?
+
+A value is a single piece of data that TruScript can work with. Some value types include numbers, strings, and booleans. These might be types you have heard from other scripting languages. We will cover these value types in more detail in the next section.
+
+Values can be used to perform calculations, make decisions, and store information. You can pass values to functions, get values back from functions, and store them in variables.
+
+In this way, values are the building blocks of TruScript. Values are stored in memory, and they can be manipulated and transformed in various ways. For example, you can add two numbers together, concatenate two strings (combining them into a single string), or manipulate TruWorlds objects in the world.
+
+== What is a variable?
+
+Variables let you give a name to a value so you can use it later.
+
+A variable can be whatever type of value you want, and the type of the variable can change over time. For example, you could have a variable that starts out as a number and later becomes a string. Think of a variable as a box that can hold a value. You can put a value in the box, ask the box what value is inside of it, and replace it with a different value.
+
+=== Declaring variables
+
+To make a variable in TruScript, you can **declare** it by using the `=` operator. For example, the following code declares a variable called `greeting` and assigns it the value `"hello"`:
+[source,truscript]
+----
+greeting = "hello"
+count = 3
+
+print(greeting)
+print(count)
+----
+
+`print(greeting)` is a function call that uses the value stored in the `greeting` variable. The output of this code will be:
+----
+hello
+3
+----
+
+Notice that we didn't have to tell TruScript about the type of the variable. TruScript is a dynamically typed language, which means that you don't have to specify the type of a variable when you declare it.
+
+=== Naming rules
+
+Variable names start with a letter or underscore and may contain letters, digits, and underscores. You cannot start a variable name with a number, and you cannot use TruScript's built-in keywords as variable names.
+
+[source,truscript]
+----
+my_variable = "hello!" # This is a good variable name!
+1st_variable = "hello!" # You can't start a variable name with a number.
+if = "hello!" # You can't use TruScript's built-in keywords as variable names.
+----
+
+NOTE: Built-in keywords and global types are given a special color in the TruScript editor to help you avoid naming conflicts. If you name a variable incorrectly, it will be highlighted in red in TruWorlds Creator.
+
+We recommend snake_case for variable names, which means using all lowercase letters and underscores to separate words. For example, `my_variable` is a good variable name, while you should avoid using `myVariable` or `MyVariable`.
+
+This is just a convention for writing good TruScript, though, and you can use whatever naming style you'd like! Just make sure you aren't running into any naming conflicts with TruScript's built-in functions and keywords, or TruWorlds object names
+
+=== nil: This doesn't exist
+
+If you try to use a variable that hasn't been declared yet, TruScript will instead give you the `nil` value.
+
+`nil` is a special kind of value that basically means "this doesn't exist". You can use `nil` to check if a variable has been declared yet or not.
+
+[source,truscript]
+----
+print(my_variable) # We didn't make a variable called my_variable, so this will print "nil"
+----
+
+Make sure you are spelling your variable names correctly, or you may run into problems with `nil`! TruScript is case-sensitive, so `my_variable` and `My_Variable` are two different variables and can have different values.

@@ -1,0 +1,22 @@
+= TruWorlds Documentation
+
+This repository holds the source for the documentation that show up on https://create.truworlds.com/docs[create.truworlds.com/docs].
+
+Anyone can contribute to the guides, examples, and Engine API prose.
+
+== Contributing
+
+Additions to the TruWorlds documentation usually look like:
+
+- Corrections to existing guides such as typos, outdated info, sections that confused you.
+- New guides about building worlds, TruWorlds Creator, or TruScript.
+- Code examples for the API reference.
+
+== Licenses
+
+- The prose in this project is licensed under CC-BY-4.0, see
+link:LICENSE[LICENSE].
+- The code samples in the project are licensed under MIT, see the
+link:LICENSE-CODE[LICENSE-CODE].
+
+By opening a PR you're agreeing your contribution is licensed the same way.

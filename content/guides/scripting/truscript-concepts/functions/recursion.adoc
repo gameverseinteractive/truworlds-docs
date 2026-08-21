@@ -1,0 +1,29 @@
+= Recursion
+:description: Writing functions that call themselves
+
+TruScript's runtime features a **call stack** that keeps track of function calls. When a function is called, a new **stack frame** is created for that function call, and when the function returns, the stack frame is removed from the call stack.
+
+You can use this feature to create recursive functions, which are functions that call themselves. Recursive functions are useful for solving problems that can be broken down into smaller subproblems.
+
+This example calculates the https://grokipedia.com/page/Factorial[factorial] of a number, which is the product of all positive integers less than or equal to that number. The factorial loop ends when it reaches the base case of `n <= 1`, at which point it returns `1`. This function keep calling itself with a smaller value of `n` until it reaches 1.
+[source,truscript]
+----
+func factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+print(factorial(5)) # prints 120
+----
+
+Notice how the `factorial` function calls `factorial` (the exact same function) with a smaller value of `n` until it reaches the base case of `n <= 1`. This is a common pattern in recursive functions.
+
+When you bind a function with `func`, it will assign that function to a variable with the same name as the function. This means that you can call the function by its name, as the inside block will search for a function named `factorial` in the outer scope.
+
+NOTE: Be careful when writing recursive functions, as it can lead to infinite loops if the base case is not reached. TruScript will throw a runtime error if the maximum call stack depth is exceeded. This can happen if the function keeps calling itself without ever reaching a base case.
+
+[source,truscript]
+----
+# Calling this function will result in an error because it will call itself forever, which will exceed the maximum call stack depth.
+func infinite_recursion(n):
+    return infinite_recursion(n + 1)
+----

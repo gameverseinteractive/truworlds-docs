@@ -1,0 +1,8 @@
+[source]
+----
+local sensor = world.FindFirstChild("Sensor")
+if sensor:
+    for hit in sensor.GetTouching():
+        if hit.IsA("Part"):
+            hit.Color = Color3(1, 0, 0)
+----

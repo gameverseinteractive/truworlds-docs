@@ -1,0 +1,135 @@
+= Value Types
+:description: Learn about the different types of values in TruScript.
+
+== Simple values
+=== Numbers
+You can use numbers in TruScript by typing out the value in digits.
+[source,truscript]
+----
+42
+3.14
+10e3
+----
+The third example used scientific notation to represent 10,000.
+
+NOTE: There is no distinction between integers and floating point numbers in TruScript. Internally, all numbers in TruScript are stored in memory as IEEE 754 double precision floating point numbers.
+
+=== Strings
+Strings are sequences of characters. You can use strings to represent text in TruScript. All strings must be surrounded by double quotes or single quotes.
+[source,truscript]
+----
+"Hello, "
+'world!'
+"TruScript is \n awesome!"
+----
+
+If you want a string to represent multiple lines of text, you can type the `\n` character sequence to represent a new line. The third example above represents the text "TruScript is " on the first line and " awesome!" on the second line.
+----
+TruScript is
+ awesome!
+----
+
+=== Booleans
+Booleans are values that can only be `true` or `false`. You can use booleans to answer yes/no questions in your code.
+[source,truscript]
+----
+true # means yes
+false # means no
+----
+
+=== Nil
+The `nil` value represents the absence of a value. It is also known as *null* in some other programming languages. You can use `nil` to represent a variable that doesn't have a value yet, or to indicate that a function didn't return anything.
+[source,truscript]
+----
+nil
+----
+
+Some functions may return `void`, which is a special type of `nil` that indicates that a function didn't return anything. If you write a function that returns without specifying a value, it will return `void`. For example, some functions like `print()` return `void`.
+[source,truscript]
+----
+local print_return = print("Hello, world!")
+print(print_return) # prints "void"
+----
+
+== Complex values
+=== Arrays
+Arrays are ordered lists of values. You can use arrays to organize multiple values together, like a list of player names that are in the world.
+
+To create an array, put a list of other values inside square brackets, separated by commas. For example:
+[source,truscript]
+----
+[1, 2, 3]
+["Pat", "Nicholas", "Matthew"]
+[48, "TruScript", true]
+----
+Arrays can contain any type of value, and the values in an array can be of different types. For example, the third example above contains a number, and a string, and a boolean.
+
+Arrays can also contain other arrays, which allows you to create nested lists of values.
+[source,truscript]
+----
+[1, 2, [3, 4], 5]
+----
+The third item in the array above is another array that contains the values 3 and 4.
+
+=== Tables
+Tables are collections of key/value pairs. You can use tables to organize values together, like a list of player names and their scores.
+
+To create a table, put a list of key/value pairs inside curly braces. Each key/value pair is separated by a comma, and the key and value are separated by an equals sign.
+[source,truscript]
+----
+{
+    "Pat" = 10,
+    "Nicholas" = 20,
+    "Matthew" = 30
+}
+----
+
+Notice how each entry in the table looks like a variable assignment, with the key on the left side of the equals sign and the value on the right side. 
+
+The keys in a table can be any type of value, including strings, numbers, booleans, and complex values like arrays and even other tables. The values in a table can also be any type of value.
+
+[source,truscript]
+----
+{
+    true = false,
+    10 = "ten",
+    nil = "Doesn't exist yet",
+    [1, 2, 3] = [4, 5, 6],
+    {
+        "Nested" = "tables are cool!"
+    } = "This is a nested table!"
+}
+----
+
+You can also pass a name literal as a key in a table. Name literals will automatically be converted to string keys.
+[source,truscript]
+----
+{
+    Hello = "World!",
+    Foo = true
+}
+----
+
+=== Objects
+Objects are complex values that have properties and functions attached to them. You might encounter object-type values when working with objects in TruWorlds. Some object types in TruWorlds include `Part`, `Model`, and `Player`. 
+
+To create an object in TruWorlds, use the `new` keyword followed by the name of the object type. 
+
+For example, the following code creates a new `Part` object:
+[source,truscript]
+----
+new Part()
+----
+
+You can give the object initial properties by adding a key-value pair of names and values after the object type. For example, the following code creates a new `Part` object with the name "My Part", sets its parent to the world, and gives it a random color:
+[source,truscript]
+----
+new Part() {
+    Name = "My Part",
+    Parent = world,
+    Color = Color3.Random()
+}
+----
+
+=== Functions
+In TruScript, functions are also special types of values. A function is a block of TruScript code that can be called to perform a specific task. Functions can take input values (called parameters) and return a single output value. You will learn more about functions in the next section.

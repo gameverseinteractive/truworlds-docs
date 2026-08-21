@@ -1,0 +1,4 @@
+= Scripting
+:description: Learn TruScript, the scripting language that powers behavior in your worlds.
+
+TruScript is the scripting language behind every interaction on TruWorlds. These guides will take you from your first "Hello World" to structuring a full game loop.

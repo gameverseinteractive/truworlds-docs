@@ -1,0 +1,15 @@
+= Expressions & Operators
+:description: Dive deeper into expressions and data-manipulation with operators in TruScript.
+
+== Equality
+The `==` and `!=` operators check for equality in TruScript. Whether two objects are considered "equal" is governed by these rules:
+
+- If values are different types, they are never equal.
+- If both values are `nil`, they are equal.
+- `nil` is equal to `void`.
+- Numbers are equal if they are the same value, with a precision epsilon of 1e-10. This means that numbers that differ by one ten-billionth or less are considered equal.
+- Strings are compared character by character, and are equal if they have the same length and characters.
+- Booleans are equal if they are both `true` or both `false` (XNOR gate).
+- Objects compare by identity, meaning that two objects are equal if they are the **exact same object in memory**. Two different arrays containing the same values are not equal, and two different tables with the same keys and values are not equal.
+
+NOTE: The tolerant number comparison means `==` is not perfectly transitive at the very edge of the tolerance. We designed TruScript this way to allow for ordinary floating-point rounding errors to not break equality checks. However, it can also break mathematical transitivity in some cases. This is something you should be aware of when working with very small numbers!

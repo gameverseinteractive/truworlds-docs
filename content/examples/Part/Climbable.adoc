@@ -1,0 +1,8 @@
+[source]
+----
+local ladder = new Part()
+ladder.Size = Vector3(1, 10, 0.25)
+ladder.Climbable = true
+ladder.Anchored = true
+ladder.Parent = world
+----

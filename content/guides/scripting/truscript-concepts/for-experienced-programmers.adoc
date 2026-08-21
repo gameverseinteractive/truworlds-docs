@@ -1,0 +1,139 @@
+= For Experienced Programmers
+:description: Learn TruScript in one page if you already know how to code in other languages
+
+NOTE: This page covers some of the technical aspects of TruScript. If you'd like to get started with TruScript without diving into the technical details, check out the other pages in this section!
+
+== What is TruScript?
+
+TruScript is a dynamically-typed, imperative programming language designed for creating interactive experiences in TruWorlds.
+
+We built TruScript to be the first-class scripting language for the TruWorlds game engine. It features a familiar syntax and structure that will feel comfortable to anyone who has used other scripting languages.
+
+== Compared to other languages
+
+TruScript uses an indentation-based syntax similar to Python, making it easy to read, write, and understand structured logic and control flow.
+
+The runtime has a lot of similarities to the Lua programming language. Variables are global by default, functions are values that capture information about their surrounding scope, and everything else is a value in a dynamic type system.
+
+TruScript runs on coroutines and stack frames. It has an event system built into the TruWorlds game engine through Signals.
+
+TruScript features automatic memory management and garbage collection. You don't need to worry about memory allocation or deallocation.
+
+== TruScript examples
+=== Comments and variables
+
+[source,truscript]
+----
+# Comments look like this. You can put the comment on its own or at the end of a line of code.
+###
+If you put three hash symbols before a line, it will be treated as a multi-line comment.
+
+Multi-line comments look like this.
+###
+
+local health = 100  # block-scoped local variable
+score = 0           # score will be a global variable
+local a, b, c = 0   # all three get assigned to 0 (not destructuring)
+a = "foo"           # a is now a string
+print(a, b, c)      # prints foo 0 0
+----
+
+=== Numbers and strings
+
+[source,truscript]
+----
+local n = 42  # all numbers are double-precision floating point numbers
+local big = 10e3
+local small = 1e-3
+
+local name = "Pat"      # single or double quotes
+print("Score: " + 100)  # Concatenation (+ operator) works with strings and any type
+print("Hello, " + name) # prints Hello, Pat
+
+local score = 0
+score += 10
+score++ # postfix returns the old value
+++score # prefix returns the new value
+----
+
+=== Conditionals
+
+[source,truscript]
+----
+if health <= 0:
+    respawn()
+elif health < 30:
+    warn("low health")
+else:
+    pass # empty blocks are not allowed, you can write "pass" as a placeholder.
+
+if health > 0: alive = true; print("alive") # one-liner form with semicolons
+----
+
+=== Loops
+
+[source,truscript]
+----
+while health > 0:
+    health -= 1
+
+for i in range(0, 10):
+    print(i) # prints 0 through 9
+
+for item in my_array:
+    print(item) # prints every element in the array
+
+for key in my_table:
+    print(key)           # prints every key in the table
+    print(my_table[key]) # get the value for that key
+----
+
+=== Functions and lambdas
+
+[source,truscript]
+----
+func damage(target, amount):
+    if amount <= 0:
+        return nil
+    return target.health - amount
+
+# anonymous functions
+local handler = func(x):
+    print(x)
+
+local double = expr(x): x * 2 # single expression function
+
+handler("hello")
+print(double(12))
+
+part.Touched.Connect(func(other): # you'll see this structure a lot
+    print(other.Name)
+)                                 # the closing ) must be indented the same as the call
+----
+
+=== Arrays, tables, and objects
+
+[source,truscript]
+----
+local arr = [1, 2, 3]          # arrays are 0-based
+arr.push(4)
+print(arr[0])                  # prints 1
+print(arr.length)              # prints 4
+local doubled = arr.map(expr(n): n * 2)
+
+local scores = { Pat = 10, Nicholas = 20 }
+scores.Pat = 15
+scores["Nicholas"] = 25
+
+local part = new Part()
+part.Name = "Platform"
+part.Anchored = true
+part.Parent = world
+
+# Initialize properties inline without referencing the variable
+local part = new Part() {
+    Name = "Platform",
+    Anchored = true,
+    Parent = world
+}
+----

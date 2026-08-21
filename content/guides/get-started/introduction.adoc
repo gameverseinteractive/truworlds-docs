@@ -1,0 +1,8 @@
+= Introduction
+:description: What TruWorlds Creator is and how the docs are organized.
+
+Welcome to the TruWorlds documentation. Here you'll find everything you need to build, script, and publish your worlds.
+
+== How the docs are organized
+
+Guides walk you through concepts step by step, while the engine documentation is a reference for every class, data type, enum, and TruScript module.

@@ -1,0 +1,4 @@
+= Get Started
+:description: Set up TruWorlds Creator and build your first world.
+
+New to TruWorlds Creator? Start here. This category covers what TruWorlds Creator is, how to install it, and everything you need before building your first world.

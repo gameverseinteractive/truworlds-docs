@@ -1,0 +1,104 @@
+= Truthiness and Boolean Operators
+:description: Boolean type coercion and short-circuiting operators in TruScript.
+
+TruScript features automatic type coercion in a boolean context. This is known as **truthiness**.
+
+Conditions in TruScript (e.g., `if`, `while`, `and`, `or`, `not`) do not require a boolean value. Instead, they determine if a value coerces to `true` or `false` based on its **truthiness**. This feature makes it easy to write concise code without having to explicitly check for `nil` or `false`-like values.
+
+[cols="1,1"]
+|===
+|Value
+|Coerced boolean type
+
+|`nil`
+|False
+
+|`void`
+|True
+
+|`false`
+|False
+
+|`true`
+|True
+
+|Numbers
+|True if non-zero or negative, false if zero or `NaN`
+
+|Strings
+|True if non-empty, false if empty
+
+|Objects
+|Always true, including empty arrays (`[]`) and tables (`{}`)
+|=== 
+
+[source,truscript]
+----
+if "": print("never") # empty string is falsy
+if "anything": print("runs") # non-empty string is truthy
+if 0: print("never") # zero is falsy
+if []: print("runs") # empty array is truthy
+----
+
+Note how `void` is a truthy value, while `nil` is falsy, which usefully sets `void` apart from `nil`. Successful function calls that return `void` (the absence of a return value) evaluate to true in a boolean context:
+[source,truscript]
+----
+func doSomething():
+    new Part() {
+	    Parent = world
+    }
+    print("did something")
+
+if doSomething():
+    print("it worked!") # prints "it worked!" because doSomething() successfully did some work
+----
+
+=== Explicit Boolean Conversion
+If you want to manually evaluate the truthiness of a value in the form of a direct boolean, you can use the `not` operator twice. The first `not` will convert the value to a boolean and negate it, and the second `not` will negate it again, resulting in a boolean that represents the truthiness of the original value.
+[source,truscript]
+----
+local value = "hello"
+printf("{0} is truthy: {1}", value, not not value) # prints "hello is truthy: true"
+----
+
+The string `"false"` is truthy because it is a non-empty string. If you are trying to parse a boolean string, you can use the `tobool()` function instead.
+[source,truscript]
+----
+local value = "false"
+if tobool(value):
+    print("Does not run")
+else:
+    print("Runs")
+----
+
+== Short-circuiting `and`, `or`
+
+Boolean operators like logical AND as well as logical OR determine the truthiness of the left operand and returns back either the left or right operand. These operators do not return a boolean value. This is known as **short-circuiting** because the right operand is not evaluated if the left operand is sufficient to determine the result.
+
+- `a or b` - If `a` is truthy, returns `a`. Otherwise, returns `b`.
+- `a and b` - If `a` is falsy, returns `b`. Otherwise, returns `a`.
+
+This behavior allows for you to provide a default value with the `or` operator, known in some other languages as "null coalescing". For example:
+[source,truscript]
+----
+func print_display_name(player_name):
+    local name = player_name or "Anonymous"
+    print(name)
+
+print_display_name("Pat") # prints "Pat"
+print_display_name(nil) # prints "Anonymous"
+----
+
+If the left operand of `and` or `or` is sufficient to determine the result, the right operand is not evaluated.
+
+This is known as "short-circuiting" because the right operand is not evaluated if the left operand is sufficient to determine the result. This can be useful for avoiding unnecessary computations or side effects. For example, consider the following script:
+[source,truscript]
+----
+func expensive_computation():
+    print("Expensive computation running...")
+    wait(9999)
+    return 42
+
+printf("Result: {0}", true or expensive_computation()) # prints "Result: true" and does not run the expensive computation
+printf("Result: {0}", false and expensive_computation()) # prints "Result: false" and does not run the expensive computation
+----

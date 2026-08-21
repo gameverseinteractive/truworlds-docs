@@ -1,0 +1,2 @@
+= Functions
+:description: Defining and calling functions in TruScript.
