@@ -44,7 +44,7 @@ The `nil` value represents the absence of a value. It is also known as *null* in
 nil
 ----
 
-A `return` statement that doesn't specify a return value will implicitly `nil`.
+A `return` statement that doesn't specify a return value will implicitly return `nil`.
 [source,truscript]
 ----
 func myFunc():
