@@ -6,7 +6,6 @@ The `==` and `!=` operators check for equality in TruScript. Whether two objects
 
 - If values are different types, they are never equal.
 - If both values are `nil`, they are equal.
-- `nil` is equal to `void`.
 - Numbers are equal if they are the same value, with a precision epsilon of 1e-10. This means that numbers that differ by one ten-billionth or less are considered equal.
 - Strings are compared character by character, and are equal if they have the same length and characters.
 - Booleans are equal if they are both `true` or both `false` (XNOR gate).

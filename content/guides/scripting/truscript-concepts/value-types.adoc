@@ -44,11 +44,14 @@ The `nil` value represents the absence of a value. It is also known as *null* in
 nil
 ----
 
-Some functions may return `void`, which is a special type of `nil` that indicates that a function didn't return anything. If you write a function that returns without specifying a value, it will return `void`. For example, some functions like `print()` return `void`.
+A `return` statement that doesn't specify a return value will implicitly `nil`.
 [source,truscript]
 ----
-local print_return = print("Hello, world!")
-print(print_return) # prints "void"
+func myFunc():
+    return
+
+local myValue = myFunc()
+print(myValue) # prints nil
 ----
 
 == Complex values

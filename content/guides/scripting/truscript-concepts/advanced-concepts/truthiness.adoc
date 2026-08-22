@@ -13,9 +13,6 @@ Conditions in TruScript (e.g., `if`, `while`, `and`, `or`, `not`) do not require
 |`nil`
 |False
 
-|`void`
-|True
-
 |`false`
 |False
 
@@ -38,19 +35,6 @@ if "": print("never") # empty string is falsy
 if "anything": print("runs") # non-empty string is truthy
 if 0: print("never") # zero is falsy
 if []: print("runs") # empty array is truthy
-----
-
-Note how `void` is a truthy value, while `nil` is falsy, which usefully sets `void` apart from `nil`. Successful function calls that return `void` (the absence of a return value) evaluate to true in a boolean context:
-[source,truscript]
-----
-func doSomething():
-    new Part() {
-	    Parent = world
-    }
-    print("did something")
-
-if doSomething():
-    print("it worked!") # prints "it worked!" because doSomething() successfully did some work
 ----
 
 === Explicit Boolean Conversion
