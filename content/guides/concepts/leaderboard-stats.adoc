@@ -1,0 +1,2 @@
+= Leaderboard Stats
+:description: Add in-game stats and leaderboards to your world
