@@ -1,0 +1,2 @@
+= TruScript Language
+:description: Learn concepts of the TruScript programming language

@@ -1,2 +1,0 @@
-= TruScript Concepts
-:description: Learn core TruScript concepts and navigate the language
