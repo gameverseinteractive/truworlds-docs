@@ -1,0 +1,6 @@
+```truscript
+local bodyA = world.FindFirstChild("BodyA")
+local bodyB = world.FindFirstChild("BodyB")
+if bodyA and bodyB:
+    local weld = bodyA.MakeJoint(bodyB)
+```

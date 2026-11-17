@@ -1,2 +1,0 @@
-= VisualInstance Hierarchy
-:description: The way that VisualInstance-type objects inherit and control visibility

@@ -1,0 +1,7 @@
+```truscript
+local ball = new Part()
+ball.Shape = PartShape.Ball
+ball.Size = Vector3(3, 3, 3)
+ball.Color = Color3().Random()
+ball.Parent = world
+```

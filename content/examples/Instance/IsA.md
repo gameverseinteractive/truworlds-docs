@@ -1,0 +1,5 @@
+```truscript
+for obj in world.GetDescendants():
+    if obj.IsA("PhysicsInstance"):
+        obj.Anchored = true
+```

@@ -1,0 +1,8 @@
+```truscript
+local part = world.FindFirstChild("Marker")
+if part:
+    local matrix = part.GetCMatrix()
+    local spawnedPart = new Part()
+    spawnedPart.CMatrix = matrix
+    spawnedPart.Parent = world
+```

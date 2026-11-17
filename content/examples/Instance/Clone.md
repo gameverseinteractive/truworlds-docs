@@ -1,0 +1,7 @@
+```truscript
+local template = world.FindFirstChild("CoinTemplate")
+if template:
+    local coin = template.Clone()
+    coin.Position = new Vector3(0, 5, 0)
+    coin.Parent = world
+```

@@ -1,0 +1,5 @@
+```truscript
+local door = world.FindFirstChild("Door")
+if door:
+    door.Visible = false
+```

@@ -1,0 +1,6 @@
+```truscript
+local folder = world.FindFirstChild("Coins")
+if folder:
+    for child in folder.GetChildren():
+        child.Color = new Color3(1, 1, 0)
+```

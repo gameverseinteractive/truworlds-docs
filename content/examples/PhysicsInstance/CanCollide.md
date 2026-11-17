@@ -1,0 +1,6 @@
+```truscript
+local ghost = new Part()
+ghost.CanCollide = false
+ghost.Transparency = 0.5
+ghost.Parent = world
+```

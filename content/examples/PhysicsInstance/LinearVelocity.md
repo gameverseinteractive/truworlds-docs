@@ -1,0 +1,6 @@
+```truscript
+local ball = new Part()
+ball.Shape = PartShape.Ball
+ball.Parent = world
+ball.LinearVelocity = Vector3(0, 50, 0)
+```

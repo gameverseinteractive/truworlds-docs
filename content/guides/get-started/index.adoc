@@ -1,3 +1,0 @@
-= Get Started
-:description: Set up TruWorlds Creator and build your first world.
-

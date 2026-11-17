@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {
+      "kind": "section", "path": "engine", "title": "Engine concepts",
+      "index": { "path": "engine/index", "title": "Engine concepts", "description": "How it fits together" },
+      "entries": [
+        { "kind": "page", "path": "engine/tree", "title": "The tree", "description": "Instances under game" },
+        {
+          "kind": "section", "path": "engine/deep", "title": "Deeper",
+          "index": { "path": "engine/deep/index", "title": "Deeper", "description": "More detail" },
+          "entries": [ { "kind": "page", "path": "engine/deep/one", "title": "One", "description": "A nested page" } ]
+        }
+      ]
+    },
+    {
+      "kind": "section", "path": "lonely", "title": "Lonely",
+      "index": { "path": "lonely/index", "title": "Lonely", "description": "Only an index" },
+      "entries": []
+    },
+    { "kind": "page", "path": "glossary", "title": "Glossary", "description": "Every term" }
+  ],
+  "errors": [
+    "page \"physics/stray\": must be \"engine/\" and a name of lowercase letters, digits and hyphens",
+    "\"engine/tree\" is listed more than once",
+    "section \"noindex\" has no noindex/index page, so the site leaves it out",
+    "\"assets\": \"assets\" is taken by the image route of the site",
+    "page \"index\": the landing is index.md at the content root, not a toc page",
+    "top level, entry 6: has both \"path:\" and \"section:\"",
+    "\"lonely\" is listed more than once",
+    "section \"index\": the landing is index.md at the content root, not a toc page"
+  ]
+}

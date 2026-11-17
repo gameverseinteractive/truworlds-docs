@@ -1,2 +1,0 @@
-= World Virtual File System
-:description: The Virtual File System embeds scripts and assets directly into your world.

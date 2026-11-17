@@ -1,0 +1,6 @@
+```truscript
+local part = new Part()
+part.Material = PartMaterial.Glow
+part.Color = Color3(0, 0.5, 1)
+part.Parent = world
+```

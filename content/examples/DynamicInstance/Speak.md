@@ -1,0 +1,5 @@
+```truscript
+local npc = world.FindFirstChild("Shopkeeper")
+if npc:
+    npc.Speak("Welcome to my shop!", 4)
+```

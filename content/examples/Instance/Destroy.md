@@ -1,0 +1,6 @@
+```truscript
+local part = new Part()
+part.Parent = world
+wait(5)
+part.Destroy()
+```

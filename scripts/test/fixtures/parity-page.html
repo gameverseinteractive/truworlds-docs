@@ -1,0 +1,42 @@
+<p>A ray asks the world what lies along a line. Read <a href="/docs/guides/scripting/signals#waiting">signals</a> first, or go back to <a href="/docs/guides/physics">physics</a>.</p>
+<h2 id="casting-a-ray"><a class="link" href="#casting-a-ray">Casting a ray</a></h2>
+<p>Call <a href="/docs/classes/World#Raycast" class="api">Raycast</a> with a start and a direction.</p>
+<pre class="highlight ts-code"><code><span class="ts-keyword">local</span> hit = <span class="ts-global">world</span>.<span class="ts-table-member">Raycast</span>(origin, direction, <span class="ts-keyword">new</span> <span class="ts-constructor">RaycastParams</span>())
+
+<span class="ts-keyword">if</span> hit == <span class="ts-keyword">nil</span>:
+    <span class="ts-global">print</span>(<span class="ts-string">"Nothing below"</span>)
+<span class="ts-keyword">else</span>:
+    <span class="ts-global">print</span>(<span class="ts-string">"Hit "</span> + hit.<span class="ts-table-member">Instance</span>.<span class="ts-table-member">Name</span>) <span class="ts-comment"># the part that was hit</span>
+</code></pre>
+<div class="admonitionblock tip"><div class="title">Tip</div>
+<p>Keep rays short; long rays cost more.</p>
+</div>
+<h3 id="hit-results"><a class="link" href="#hit-results">Hit results</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Position</code></td>
+<td>Where the ray hit</td>
+</tr>
+<tr>
+<td><code>Normal</code></td>
+<td>The surface direction</td>
+</tr>
+</tbody>
+</table>
+<h2 id="casting-a-ray-1"><a class="link" href="#casting-a-ray-1">Casting a ray</a></h2>
+<p>Jump back to <a href="#hit-results">hit results</a>.</p>
+<section class="example">
+<h2 id="example-a-ray-from-the-sky" class="example"><a class="link" href="#example-a-ray-from-the-sky"><span class="example-label">Example</span>A ray from the sky</a></h2>
+<p>This server script casts one ray; see the <a href="https://create.truworlds.com" class="external" target="_blank" rel="noopener noreferrer">TruWorlds site</a>.</p>
+<pre class="highlight ts-code"><code><span class="ts-keyword">local</span> hit = <span class="ts-global">world</span>.<span class="ts-table-member">Raycast</span>(<span class="ts-keyword">new</span> <span class="ts-constructor">Vector3</span>(<span class="ts-number">0</span>, <span class="ts-number">50</span>, <span class="ts-number">0</span>), <span class="ts-keyword">new</span> <span class="ts-constructor">Vector3</span>(<span class="ts-number">0</span>, -<span class="ts-number">100</span>, <span class="ts-number">0</span>), <span class="ts-keyword">new</span> <span class="ts-constructor">RaycastParams</span>())
+</code></pre>
+</section>
+<h2 id="after-the-example"><a class="link" href="#after-the-example">After the example</a></h2>
+<p>Plain again.</p>

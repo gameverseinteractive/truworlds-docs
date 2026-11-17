@@ -1,0 +1,491 @@
+# The fixed page list for the manual, in reader order. Draft: merges and order await the owner (see maintainer/toc-notes.md).
+- section: creator
+  title: "TruWorlds Creator"
+  pages:
+    - path: creator/index
+      title: "TruWorlds Creator"
+      description: "The application for building, scripting, testing and publishing worlds"
+    - path: creator/interface-overview
+      title: "Window, panels and tabs"
+      description: "The menu bar, ribbon, panels and docks, and the tabs in the middle"
+    - path: creator/keyboard-shortcuts
+      title: "Keyboard shortcuts"
+      description: "Every shortcut in TruWorlds Creator, by where you use it"
+    - path: creator/viewport-and-selection
+      title: "Viewport and selection"
+      description: "Move the editing camera, and pick objects by clicking or dragging a box"
+    - path: creator/ribbon-and-insert
+      title: "Ribbon and inserting"
+      description: "The ribbon's tabs and buttons, and where a newly inserted object goes"
+    - path: creator/transform-tools
+      title: "Transform tools"
+      description: "Move, rotate and resize objects, with snapping and locking"
+    - path: creator/explorer
+      title: "Explorer"
+      description: "Read the tree, and rename, group and reorder objects"
+    - path: creator/properties-panel
+      title: "Properties panel"
+      description: "Read and edit the properties of the selected objects"
+    - path: creator/asset-library
+      title: "Asset Library"
+      description: "Assets in your TruWorlds account, asset ids, and prefabs"
+    - path: creator/asset-browser
+      title: "Asset Browser"
+      description: "Manage the folders and script files stored inside a world"
+    - path: creator/script-editor
+      title: "Script editor"
+      description: "Write and fix code in the built-in script editor"
+    - path: creator/script-console
+      title: "Script Console"
+      description: "Read script output, search it, and run TruScript from the command bar"
+    - path: creator/edit-history
+      title: "Edit History"
+      description: "Undo, redo, and jump back and forth through your edits"
+    - path: creator/ui-editor
+      title: "UI editor"
+      description: "Select, move and resize on-screen UI right in the viewport"
+    - path: creator/saving-and-publishing
+      title: "Saving and publishing"
+      description: "Save your world to a file, open it again, and publish it to TruWorlds"
+    - path: creator/settings
+      title: "Settings"
+      description: "The Settings window, and the preferences TruWorlds Creator remembers"
+    - path: creator/ai-agents
+      title: "Working with an AI agent"
+      description: "Connect an AI coding agent to TruWorlds Creator"
+
+- section: engine
+  title: "Engine concepts"
+  pages:
+    - path: engine/index
+      title: "Engine concepts"
+      description: "How a world is made of instances, their members and data types"
+    - path: engine/instance-tree
+      title: "The instance tree"
+      description: "The tree under game, classes and IsA, and finding instances in it"
+    - path: engine/properties-methods-signals
+      title: "Object members"
+      description: "Read and write properties, call methods, and listen to signals"
+    - path: engine/creating-and-destroying
+      title: "Creating and destroying"
+      description: "Create instances with new and Clone, and remove them with Destroy"
+    - path: engine/data-types
+      title: "Data types"
+      description: "Vector3, Color3 and the other data types, and how they copy and compare"
+    - path: engine/coordinates-and-units
+      title: "Coordinates and units"
+      description: "Studs, Y up, forward along -Z, angles, time and color ranges"
+    - path: engine/cmatrix
+      title: "CMatrix"
+      description: "Position and orientation in one value, in world and local space"
+    - path: engine/visual-instances
+      title: "VisualInstance inheritance"
+      description: "How Visible and Transparency work and pass down the tree"
+    - path: engine/point-instances
+      title: "PointInstance"
+      description: "Lights, emitters and other objects placed by the part they are in"
+    - path: engine/value-objects
+      title: "Value objects"
+      description: "Small instances that each hold one value in the tree"
+
+- section: building
+  title: "Building"
+  pages:
+    - path: building/index
+      title: "Building"
+      description: "How a world is built from parts, groups of parts and imported shapes"
+    - path: building/parts
+      title: "Parts"
+      description: "Create parts, and set their shape, size, color, material and other properties"
+    - path: building/anchoring-and-collisions
+      title: "Anchoring and collisions"
+      description: "Why parts fall or stay put, and which parts collide"
+    - path: building/models-and-folders
+      title: "Models and folders"
+      description: "Group parts, and move and measure the group"
+    - path: building/surfaces-and-textures
+      title: "Surfaces and textures"
+      description: "Put an image on a face of a part"
+    - path: building/solid-modeling
+      title: "Solid modeling"
+      description: "Join parts, cut holes, and keep overlaps with unions and negatives"
+    - path: building/meshes
+      title: "Meshes"
+      description: "Import a custom 3D mesh and use it as a MeshPart"
+
+- section: environment
+  title: "Environment"
+  pages:
+    - path: environment/index
+      title: "Environment"
+      description: "How light, sky, effects and sound turn a world of parts into a place"
+    - path: environment/lighting
+      title: "Lighting"
+      description: "Light a whole world: the sun, ambient light, shadows and a day cycle"
+    - path: environment/sky-and-fog
+      title: "Sky and fog"
+      description: "Give a world a sky and distance fog"
+    - path: environment/lights
+      title: "Lights"
+      description: "Light part of a world with point lights and spotlights"
+    - path: environment/particles-and-fire
+      title: "Particles and fire"
+      description: "Smoke, sparks, rain, magic and ready-made flames"
+    - path: environment/trails
+      title: "Trails"
+      description: "Draw a fading ribbon behind a moving thing, such as a sword swing"
+    - path: environment/highlights-and-selection
+      title: "Highlights and selection"
+      description: "Make objects stand out with a highlight or a selection box"
+    - path: environment/sound
+      title: "Sound"
+      description: "Play sound effects and music with the Audio object"
+
+- section: physics
+  title: "Physics"
+  pages:
+    - path: physics/index
+      title: "Physics"
+      description: "How parts move, collide, join and push each other while a world runs"
+    - path: physics/touch-and-overlap
+      title: "Touch and overlap"
+      description: "React when parts touch, and find the parts in a region"
+    - path: physics/raycasting
+      title: "Raycasting"
+      description: "Ask what lies along a line"
+    - path: physics/welds-and-joints
+      title: "Welds and joints"
+      description: "Join parts into one rigid body"
+    - path: physics/constraints
+      title: "Constraints"
+      description: "Build hinges, sliders and other mechanisms from attachments"
+    - path: physics/forces-and-movers
+      title: "Forces and movers"
+      description: "Move parts with velocity, conveyors and movers instead of teleporting them"
+    - path: physics/seats-and-vehicles
+      title: "Seats and vehicles"
+      description: "Seat characters, and build vehicles a player can drive"
+    - path: physics/explosions
+      title: "Explosions"
+      description: "Create a blast that pushes and breaks things"
+    - path: physics/network-ownership
+      title: "Network ownership"
+      description: "Which computer simulates each loose part, and how to change it"
+
+- section: animation
+  title: "Animation"
+  pages:
+    - path: animation/index
+      title: "Animation"
+      description: "How clips, the Animator and skeletons make characters and meshes move"
+    - path: animation/animation-clips
+      title: "Animation clips"
+      description: "What a clip is, clip ids, the built-in clips, and making your own"
+    - path: animation/animator
+      title: "The Animator"
+      description: "Load and play clips with the Animator and its tracks, and who may play them"
+    - path: animation/layers-and-timing
+      title: "Layers and timing"
+      description: "Stack tracks in layers, limit them to some bones, and control their timing"
+    - path: animation/animating-avatars
+      title: "Animating avatars"
+      description: "Animate the standard avatar and replace its movement animations"
+    - path: animation/animating-in-blender
+      title: "Animating in Blender"
+      description: "Pose the TruWorlds avatar rig in Blender and export your animations as a GLB"
+    - path: animation/animating-meshparts
+      title: "Animating MeshParts"
+      description: "Import a mesh with a skeleton, give it an Animator, and animate it"
+    - path: animation/armatures-and-bones
+      title: "Armatures and bones"
+      description: "The skeleton objects an Animator drives, and reading where each bone is"
+    - path: animation/state-machines-and-blending
+      title: "Blending and states"
+      description: "Mix clips by one number, and switch between named states"
+    - path: animation/tweens
+      title: "Tweens"
+      description: "Animate properties smoothly on a player's device"
+
+- section: scripting
+  title: "Scripting"
+  pages:
+    - path: scripting/index
+      title: "Scripting"
+      description: "How scripts make a world act: where they run, and how they react and wait"
+    - path: scripting/what-is-a-script
+      title: "What is a script?"
+      description: "What a script is, when it runs, and when it stops"
+    - path: scripting/script-components
+      title: "Files and components"
+      description: "Where script files live, and how instances attach them by path"
+    - path: scripting/this-game-world
+      title: "this, game and world"
+      description: "The three names every script starts with"
+    - path: scripting/script-types
+      title: "Script types"
+      description: "Server, client and module scripts: where each runs and what it sees"
+    - path: scripting/waiting-and-tasks
+      title: "Waiting and tasks"
+      description: "Pause with wait, and run work side by side with spawn"
+    - path: scripting/signals-and-events
+      title: "Signals and events"
+      description: "React with Connect, Once and Wait, and know when handlers run"
+    - path: scripting/scripts-working-together
+      title: "Scripts working together"
+      description: "Combine small scripts, and pass state and messages between them"
+    - path: scripting/modules-and-import
+      title: "Modules and import"
+      description: "Share code and state between scripts with module scripts"
+    - path: scripting/errors-and-debugging
+      title: "Errors and debugging"
+      description: "Read errors and stack traces, and report problems from scripts"
+
+- section: truscript
+  title: "TruScript"
+  pages:
+    - path: truscript/index
+      title: "TruScript"
+      description: "The language scripts are written in, from syntax to the standard library"
+    - path: truscript/syntax-basics
+      title: "Syntax basics"
+      description: "Comments, indented blocks, statements, line breaks and names"
+    - path: truscript/for-experienced-programmers
+      title: "From other languages"
+      description: "Habits from Lua, Python and JavaScript, and features TruScript leaves out"
+    - path: truscript/variables-and-scope
+      title: "Variables and scope"
+      description: "Create and change variables, and choose where a name is visible"
+    - path: truscript/value-types
+      title: "Value types"
+      description: "Every kind of value, how each turns into text, and converting between them"
+    - path: truscript/operators
+      title: "Operators"
+      description: "Arithmetic, equality, ordering, assignment and precedence"
+    - path: truscript/truthiness
+      title: "Truthiness and logic"
+      description: "Which values count as false, and what and, or and not give back"
+    - path: truscript/strings
+      title: "Strings"
+      description: "Write, join, slice, format and compare text with the string library"
+    - path: truscript/control-flow
+      title: "Control flow"
+      description: "Decide and repeat with if, while, for and range"
+    - path: truscript/functions
+      title: "Functions"
+      description: "Declare, call and pass functions, and write them inline"
+    - path: truscript/closures
+      title: "Closures"
+      description: "How functions capture the variables around them"
+    - path: truscript/arrays
+      title: "Arrays"
+      description: "Ordered lists: indexing, iteration, copying, sorting and array members"
+    - path: truscript/tables
+      title: "Tables"
+      description: "Key-value collections: keys, iteration, nesting and the table library"
+    - path: truscript/objects-and-construction
+      title: "Objects and construction"
+      description: "Types as values, new, constructor arguments and initializer blocks"
+    - path: truscript/error-handling
+      title: "Error handling"
+      description: "Raise and catch errors with throw, try, catch and finally"
+    - path: truscript/coroutines-and-yield
+      title: "Coroutines and yield"
+      description: "Pause a task with yield and resume it with a coroutine handle"
+    - path: truscript/standard-library
+      title: "Standard library"
+      description: "The math, random and host libraries, swap, and the other built-in globals"
+
+- section: ui
+  title: "User interface"
+  pages:
+    - path: ui/index
+      title: "User interface"
+      description: "On-screen and in-world UI: where it lives, what it is made of, and its scripts"
+    - path: ui/canvas-and-screenui
+      title: "Canvas and ScreenUI"
+      description: "Where on-screen UI lives, who sees it, and how screens stack"
+    - path: ui/ui-objects
+      title: "UI elements"
+      description: "The kinds of UI element, what they all share, and which draws on top"
+    - path: ui/position-and-size
+      title: "Position and size"
+      description: "How an element's rectangle comes from its parent, and sizing to contents"
+    - path: ui/anchors
+      title: "Anchors"
+      description: "Pin or stretch an element as its parent changes size"
+    - path: ui/layout-containers
+      title: "Layout containers"
+      description: "Arrange children in rows, columns and grids"
+    - path: ui/text
+      title: "Text"
+      description: "Show text: fonts, sizes, color, alignment, wrapping and rich text"
+    - path: ui/images
+      title: "Images"
+      description: "Show images in panels and circles, and choose how they fit"
+    - path: ui/buttons-and-pointer
+      title: "Buttons and the pointer"
+      description: "Which element gets the pointer, hovering, clicking, and buttons"
+    - path: ui/text-input
+      title: "Text input"
+      description: "Let players type into text boxes, and how keyboard focus works"
+    - path: ui/scroll-panels
+      title: "Scroll panels"
+      description: "Scrolling lists and grids that hold more than fits"
+    - path: ui/showing-and-hiding
+      title: "Showing and hiding UI"
+      description: "Visible and Transparency in UI, and fading a whole screen"
+    - path: ui/scripting-ui
+      title: "Scripting UI"
+      description: "Client scripts that build UI, show game data and ask the server"
+    - path: ui/billboard-ui
+      title: "Billboard UI"
+      description: "Put UI in the 3D world, attached to a part"
+
+- section: networking
+  title: "Networking"
+  pages:
+    - path: networking/index
+      title: "Networking"
+      description: "The server and players' devices, the messages between them, and frames"
+    - path: networking/client-server-model
+      title: "Client-server boundary"
+      description: "How a running world is split between the server and players' devices"
+    - path: networking/replication
+      title: "Replication"
+      description: "What the server sends to players' devices, and when"
+    - path: networking/remote-communication
+      title: "Remote communication"
+      description: "Send messages between the server and devices, or ask the server and wait"
+    - path: networking/trusting-the-client
+      title: "Trusting the client"
+      description: "Check everything a player's device sends to the server"
+    - path: networking/frames-and-time
+      title: "Frames and time"
+      description: "What happens inside one frame, when scripts run, and how to measure time"
+    - path: networking/physics-interpolation
+      title: "Physics interpolation"
+      description: "Where a moving object is, and where it is drawn"
+
+- section: players
+  title: "Players and data"
+  pages:
+    - path: players/index
+      title: "Players and data"
+      description: "Who is in a world, the body each one controls, and data that outlives a server"
+    - path: players/players-and-characters
+      title: "Players and characters"
+      description: "The Players system, joining and leaving, and each player's character"
+    - path: players/health-and-respawning
+      title: "Health and respawning"
+      description: "Damage and death, and how a dead player gets a new character"
+    - path: players/character-movement
+      title: "Character movement"
+      description: "Movement settings, jumping, and moving a character from a script"
+    - path: players/player-defaults
+      title: "Player defaults"
+      description: "The template and settings every player and every new character starts from"
+    - path: players/avatars
+      title: "Avatars"
+      description: "The standard character body, its colors, clothing and accessories"
+    - path: players/custom-characters
+      title: "Custom characters"
+      description: "Fixed looks, a different character per player, and bodies that are not avatars"
+    - path: players/leaderboards
+      title: "Leaderboards"
+      description: "Show per-player stats in the built-in player list"
+    - path: players/saving-data
+      title: "Saving data"
+      description: "Save, load and rank data that outlives a server"
+    - path: players/handling-shutdowns
+      title: "Handling shutdowns"
+      description: "Save every player's data before a server closes"
+    - path: players/data-browser
+      title: "The Data Browser"
+      description: "Look at and edit saved data in TruWorlds Creator"
+
+- section: gameplay
+  title: "Gameplay systems"
+  pages:
+    - path: gameplay/index
+      title: "Gameplay systems"
+      description: "Input, the camera, tools, interactions, chat, purchases and web requests"
+    - path: gameplay/input
+      title: "Input"
+      description: "Read the keyboard and mouse in client scripts"
+    - path: gameplay/input-actions
+      title: "Input actions"
+      description: "Named inputs bound to keys and buttons, and the built-in controls"
+    - path: gameplay/camera
+      title: "Camera"
+      description: "How the player's camera works, and how to script it"
+    - path: gameplay/interactions
+      title: "Interactions"
+      description: "Let players use things with prompts and click detectors"
+    - path: gameplay/creating-tools
+      title: "Creating tools"
+      description: "Build a tool players hold, and how a held tool behaves"
+    - path: gameplay/inventory
+      title: "Inventory"
+      description: "Give, equip and take away tools, and the hotbar that shows them"
+    - path: gameplay/scripting-tools
+      title: "Scripting tools"
+      description: "Make a tool act when used, on the server and the player's device"
+    - path: gameplay/chat
+      title: "Chat"
+      description: "What scripts can do with in-game chat"
+    - path: gameplay/monetization
+      title: "Monetization"
+      description: "Sell passes and products for TruCoins"
+    - path: gameplay/http
+      title: "HTTP requests"
+      description: "Call outside web services from server scripts"
+
+- section: worlds
+  title: "Multiple worlds"
+  pages:
+    - path: worlds/index
+      title: "Multiple worlds"
+      description: "Games made of several worlds, and moving players between them"
+    - path: worlds/universes-and-worlds
+      title: "Universes and worlds"
+      description: "Projects, the worlds inside them, and the Starting World"
+    - path: worlds/publishing-your-game
+      title: "Publishing your game"
+      description: "Turn a finished world into a game players can find, and publish updates"
+    - path: worlds/teleporting
+      title: "Teleporting"
+      description: "Move players from one world to another, and handle failed teleports"
+    - path: worlds/teleport-data
+      title: "Teleport data and arrivals"
+      description: "Send a small table with the players, and read how each player arrived"
+    - path: worlds/reserved-servers
+      title: "Reserved servers"
+      description: "Private servers with access codes, and lobbies that use them"
+
+- section: playtesting
+  title: "Playtesting"
+  pages:
+    - path: playtesting/index
+      title: "Playtesting"
+      description: "Run a world in TruWorlds Creator as a server and up to four players"
+    - path: playtesting/starting-a-playtest
+      title: "Starting a playtest"
+      description: "Start, extend and stop a playtest with one to four players"
+    - path: playtesting/player-start-and-spawning
+      title: "PlayerStart and spawning"
+      description: "Where a player's character appears, and how to control it"
+    - path: playtesting/switching-sessions
+      title: "Switching sessions"
+      description: "Move between the Server tab and each Player tab, and compare what each holds"
+    - path: playtesting/what-a-playtest-keeps
+      title: "What a playtest keeps"
+      description: "Which changes are thrown away when a playtest stops, and which are kept"
+    - path: playtesting/debugging-a-playtest
+      title: "Debugging a playtest"
+      description: "Find out why a world misbehaves during a playtest"
+    - path: playtesting/slow-worlds
+      title: "When a world runs slowly"
+      description: "Find what slows a playtest, with quick checks and on-screen statistics"
+- path: glossary
+  title: "Glossary"
+  description: "Every TruWorlds term in the manual, defined once"

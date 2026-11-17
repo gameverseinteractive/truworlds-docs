@@ -1,2 +1,0 @@
-= Concepts
-:description: Explore high-level concepts in the TruWorlds engine

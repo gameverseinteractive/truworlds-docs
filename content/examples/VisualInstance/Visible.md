@@ -1,0 +1,7 @@
+```truscript
+local trap = world.FindFirstChild("SpikeTrap")
+if trap:
+    trap.Visible = false
+    wait(2)
+    trap.Visible = true
+```

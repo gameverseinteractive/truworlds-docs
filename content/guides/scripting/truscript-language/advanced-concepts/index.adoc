@@ -1,3 +1,0 @@
-= Advanced Concepts
-:description: Advanced tactics and techniques for TruScript developers.
-

@@ -1,0 +1,29 @@
+- section: engine
+  title: Engine concepts
+  pages:
+    - { path: engine/index, title: Engine concepts, description: How it fits together }
+    - { path: engine/tree, title: The tree, description: Instances under game }
+    - section: engine/deep
+      title: Deeper
+      pages:
+        - { path: engine/deep/index, title: Deeper, description: More detail }
+        - { path: engine/deep/one, title: One, description: A nested page }
+    - { path: physics/stray, title: Stray, description: In the wrong section }
+    - { path: engine/tree, title: Again, description: Listed twice }
+- section: lonely
+  title: Lonely
+  pages:
+    - { path: lonely/index, title: Lonely, description: Only an index }
+- section: noindex
+  title: No index
+  pages:
+    - { path: noindex/page, title: Page, description: Its section has no index }
+- { path: assets, title: Assets, description: Taken }
+- { path: index, title: Landing, description: Not a toc page }
+- { path: both, section: both, title: Both }
+- { path: glossary, title: Glossary, description: Every term }
+- { path: lonely, title: Clash, description: Same URL as a section }
+- section: index
+  title: Index
+  pages:
+    - { path: index/index, title: Index, description: Unreachable }
